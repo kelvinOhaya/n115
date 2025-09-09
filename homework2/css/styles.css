@@ -1,0 +1,17 @@
+/* Width of a block element is 100%, and height is auto */
+
+h1 {
+  color: blue;
+}
+
+.redText {
+  color: red;
+}
+
+.blockArea {
+  background-color: aqua;
+}
+
+p {
+  color: green;
+}

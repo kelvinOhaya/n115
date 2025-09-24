@@ -67,7 +67,7 @@ nav a {
   min-width: 525px;
   margin: 40px auto 0 auto;
   align-items: center;
-  justify-content: space-between;
+  gap: 10px;
 }
 .photoGalleryTitle * {
   margin: 0;
@@ -76,7 +76,7 @@ nav a {
 }
 
 .photoGalleryTitle img {
-  width: 200px;
+  width: 100px;
 }
 
 .photoGalleryContainer {

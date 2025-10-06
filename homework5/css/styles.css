@@ -1,11 +1,22 @@
+/* Variables */
+:root {
+  --title-font-size: 7rem;
+  --sega-blue: #00337e;
+  --nintendo-red: #e60012;
+}
+
+/*------- Prefixes --------*/
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 html,
 body {
   height: 100%;
+  overflow-y: scroll;
+  background: lightgray;
 }
 h1,
 h2,
@@ -16,38 +27,347 @@ h6,
 p {
   margin-bottom: 16px;
 }
+img {
+  color: white;
+}
 
+body::-webkit-scrollbar {
+  display: none;
+}
+/* -------- End of Prefixes -------- */
+
+/*Holds Everything */
+.container {
+  width: 1000px;
+  min-height: 100vh;
+  margin: 0 auto;
+  background: rgb(22, 22, 22);
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+/* Navigation Bar */
 nav {
   height: 50px;
-  background-color: #000;
+  background: black;
+  border: 2px solid black;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
 }
 
+/*  "Home", "About", etc. */
 nav a {
   text-decoration: none;
   color: #fff;
+  font-size: 1.2rem;
+  transition: transform 0.2s ease-out, color 0.2s ease-in;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.container {
-  width: 1000px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: rgb(211, 211, 211);
+nav a:hover {
+  transform: translatey(-2px);
+  color: rgb(255, 255, 119);
 }
 
+/* Background colors for text */
+.sega-text {
+  background: var(--sega-blue);
+  color: white;
+}
+
+.nintendo-text {
+  background: var(--nintendo-red);
+  color: white;
+}
+
+/* Large image under the navbar */
 header {
   height: 300px;
-  background-image: url("../images/background.png");
   background-size: cover;
   background-position: center;
   background-repeat: none;
 }
 
+/* Image for their respective links */
+.home-header {
+  background-image: url("../images/headers/nintendo-and-sega.jpg");
+}
+.product-header {
+  background-image: url("../images/headers/luigi-reading.jpg");
+}
+.contact-header {
+  background-image: url("../images//headers/contact-us.jpg");
+}
+.about-header {
+  background-image: url("../images//headers/shonen-jump.jpg");
+  background-position: 0px -100px;
+}
+
+/* Center all of these texts */
 h1,
 p {
   text-align: center;
 }
+
+/* General Title (h1 under the header) */
+.title {
+  font-weight: bolder;
+  font-size: var(--title-font-size);
+  -webkit-text-stroke: 1px #fff;
+
+  -webkit-text-fill-color: transparent;
+}
+
+.section-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* ---------- Home Page ---------- */
+
+.home-title {
+  background: linear-gradient(
+    to left,
+    var(--sega-blue) 30%,
+    var(--nintendo-red) 60%
+  );
+  background-clip: text;
+}
+
+/* Holds Image and words */
+.home-section {
+  display: flex;
+  gap: 20px;
+  width: 50%;
+  align-items: center;
+  padding: 15px;
+  border-radius: 15px;
+}
+
+/* Outline of the text (background color is left up to specific classes sega/nintendo-text */
+.home-section a {
+  text-decoration: none;
+  border-radius: 15px;
+  padding: 10px;
+  transition: transform 0.2s ease-out;
+}
+/* Make the button a little bigger on hover */
+.home-section a:hover {
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.home-section p:first-child {
+  font-size: 1.5rem;
+}
+
+.home-section p {
+  text-align: left;
+  color: white;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.home-section img {
+  width: 200px;
+}
+.home-section span {
+  position: relative;
+  border-radius: 15px;
+}
+/*---------- End Of Home Page ----------*/
+
+/*---------- About Page ----------*/
+.about-title {
+  background-color: #dbb2f1;
+  background-clip: text;
+  -webkit-text-stroke: 2px #4c5260;
+}
+
+.about-container {
+  padding: 20px;
+}
+
+.about-section {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  color: white;
+  gap: 20px;
+}
+
+.about-section span {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  word-wrap: normal;
+  width: 80%;
+}
+
+.about-section img {
+  width: 200px;
+  border-radius: 50%;
+  border: 3px solid white;
+}
+
+.about-section p {
+  color: #dbb2f1;
+  font-size: 1.5rem;
+}
+
+/*---------- End of About Page ----------*/
+
+/*----------Products Page ----------*/
+
+.product-title {
+  background: sandybrown;
+  background-clip: text;
+  -webkit-text-stroke: 2px saddlebrown;
+}
+
+/* Title of the photo gallery */
+.photo-gallery-title {
+  /* border: 1px solid red; */
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  min-width: 525px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.photo-gallery-title img {
+  height: 60px;
+}
+
+/* Contains both photo galleries entirely */
+.photo-gallery-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  gap: 20px;
+}
+
+/* Border that holds the images */
+.photo-gallery-container {
+  border: 5px solid red;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  height: 250px;
+  width: 80%;
+  overflow-y: hidden;
+  margin: 0;
+  box-sizing: border-box;
+  padding: 10px 80px;
+}
+
+/* Changed the Sega Border */
+.photo-gallery-container:last-child {
+  border: 5px solid blue;
+}
+
+.photo-gallery-container img {
+  width: 100px;
+}
+
+.photo-gallery-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Contains image and description*/
+.img-wrapper {
+  width: fit-content;
+  display: flex;
+  width: 300px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.img-wrapper img {
+  width: 200px;
+  height: auto;
+  max-height: 120px;
+  object-fit: contain;
+}
+.img-wrapper p {
+  color: white;
+  font-weight: medium;
+  outline: 1px solid black;
+  border-radius: 15px;
+  padding: 5px 5px;
+  flex-shrink: 0;
+  text-align: center;
+}
+/*---------- End Of Products Page ----------*/
+
+/*---------- Contact Us Page ----------*/
+.contact-title {
+  background: white;
+  background-clip: text;
+  -webkit-text-stroke: 2px gray;
+}
+
+/*Contains the 3 sections of logo */
+.contact-container {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 90px;
+  padding: 0 100px;
+}
+
+/*Contains Logo Image and description */
+.contact-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-section img {
+  max-height: 100px;
+  object-fit: cover;
+}
+
+.contact-section a {
+  color: white;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border-radius: 15px;
+  border: 2px solid rgb(58, 58, 58);
+  transition: background-color 0.1s ease-in, transform 0.2s ease-out;
+}
+
+.contact-section a:hover {
+  background: rgb(58, 58, 58);
+  transform: translateY(-5px);
+}
+
+.contact-section figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.contact-section p {
+  display: inline;
+}
+
+/*---------- End of Contact Us Page ----------*/

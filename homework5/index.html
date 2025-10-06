@@ -4,37 +4,41 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title</title>
+    <title>Game Library</title>
     <link rel="stylesheet" href="css/styles.css" />
   </head>
   <body>
     <div class="container">
       <nav>
-        <a href="#">Home</a>
-        <a href="#">About</a>
-        <a href="#">Product</a>
-        <a href="#">Contact</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="product.html">Product</a>
+        <a href="contact.html">Contact</a>
         <a
           target="_blank"
           href="https://www.google.com/?zx=1759246286187&no_sw_cr=1"
-          >Google</a
         >
+          Google
+        </a>
       </nav>
-      <header></header>
-      <h1>Topic</h1>
-      <section>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum vel
-          dignissimos nobis provident sapiente corporis nisi? Id quod
-          accusantium ex laborum non magnam sed fugiat, odit dolores error
-          consequuntur. Dicta.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Reiciendis
-          excepturi quisquam quaerat iure quidem, suscipit, dicta, maiores et
-          officiis perferendis in. Laboriosam exercitationem sed adipisci!
-        </p>
-      </section>
+      <header class="home-header"></header>
+      <h1 class="title home-title">Game Library</h1>
+      <div class="section-container">
+        <section class="home-section">
+          <img src="images/logos/nintendo-logo.png" alt="Nintendo Logo" />
+          <a class="nintendo-text" href="product.html">
+            <p>Nintendo Section</p>
+            <p>Explore our gallery of Nintendo pictures!</p>
+          </a>
+        </section>
+        <section class="home-section">
+          <img src="images/logos/sega-logo.png" alt="Sega Logo" />
+          <a class="sega-text" href="product.html">
+            <p>Sega Section</p>
+            <p>Explore our gallery of Sega pictures!</p>
+          </a>
+        </section>
+      </div>
     </div>
   </body>
 </html>
